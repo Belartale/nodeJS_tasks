@@ -1,0 +1,69 @@
+// что бы експортировать нужно 
+// exports.js
+  const text1 = "TEXT1";
+  module.exports = text1;
+
+// импорт.js
+  const tex = require("./exports.js");
+  console.log(tex);
+
+// __dirname системная переменая которая показ папку 
+//E:\git\nodeJS_tasks
+
+// __filename
+//E:\git\nodeJS_tasks.js
+
+// path.basename(__filename)
+basename === название файла
+
+dirname === полный путь к папке
+
+extname === type file
+
+parse === даёт обект с разными ключами
+
+join == возрощяет строку
+
+// читает файл writeFile
+const filePath = path.join(__dirname, "test", "some text.txt");
+fs.writeFile(filePath, "lorem", (err) => {
+  if (err) {
+    throw err;
+  }
+  console.log("created .txt!!!");
+});
+
+// appendFile тоже самое только добавляет
+
+// fs.readFile читает файл
+ 1 path
+ 2 "utf-8"
+ 3 (err, content) => { ... }
+
+fs.readFile(filePath, "utf-8", (err, content) => {
+  if (err) {
+    throw err;
+  }
+  console.log("content", content);
+});
+
+// os === операционка 
+
+.platfrom() === какая 
+.arch() === какая 86 или 32
+.cpus() === процессор
+.freemem() === сколько своб пам
+.totalmem() === Всего памяти
+.homedir() === базовая дириктория
+.uptime() === сколько включем помп (в секундаъ)
+
+// events
+
+.on прослушивать собитие
+1 название собития
+2 колбэк
+но нужно имитить это
+
+.emit 
+1 название
+2 даные которые я хочу передать
