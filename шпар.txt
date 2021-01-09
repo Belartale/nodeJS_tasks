@@ -49,7 +49,7 @@ fs.readFile(filePath, "utf-8", (err, content) => {
 
 // os === операционка 
 
-.platfrom() === какая 
+.platfrom() === какая ОС
 .arch() === какая 86 или 32
 .cpus() === процессор
 .freemem() === сколько своб пам
@@ -64,6 +64,8 @@ fs.readFile(filePath, "utf-8", (err, content) => {
 2 колбэк
 но нужно имитить это
 
-.emit 
+.emit на выпуск
 1 название
 2 даные которые я хочу передать
+ 
+ 39 30

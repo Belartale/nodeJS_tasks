@@ -13,7 +13,7 @@ const emitter = new EventEmitter();
 // }, 2000);
 
 class Dispatcher extends EventEmitter {
-  subscride(eventName, cd) {
+  subscribe(eventName, cd) {
     console.log("[Subscride ...]");
     this.on(eventName, cd);
   }
@@ -23,3 +23,11 @@ class Dispatcher extends EventEmitter {
     this.emit(eventName, data);
   }
 }
+
+const dis = new Dispatcher();
+
+dis.subscribe("aa", (data) => {
+  console.log("ON:", data);
+});
+
+dis.dispatch("aa", { aa: 22 });
