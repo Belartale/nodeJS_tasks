@@ -68,4 +68,3 @@ fs.readFile(filePath, "utf-8", (err, content) => {
 1 название
 2 даные которые я хочу передать
  
- 39 30
