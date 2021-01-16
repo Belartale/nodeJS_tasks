@@ -1,9 +1,9 @@
 // что бы експортировать нужно 
-// exports.js
+// гдеЭкспорт.js
   const text1 = "TEXT1";
   module.exports = text1;
 
-// импорт.js
+// гдеИмпорт.js
   const tex = require("./exports.js");
   console.log(tex);
 
@@ -49,8 +49,8 @@ fs.readFile(filePath, "utf-8", (err, content) => {
 
 // os === операционка 
 
-.platfrom() === какая ОС
-.arch() === какая 86 или 32
+os.platfrom() === какая ОС
+os.arch() === какая 86 или 32
 .cpus() === процессор
 .freemem() === сколько своб пам
 .totalmem() === Всего памяти
@@ -67,4 +67,5 @@ fs.readFile(filePath, "utf-8", (err, content) => {
 .emit на выпуск
 1 название
 2 даные которые я хочу передать
- 
+
+// http создание веб сервера
