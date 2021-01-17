@@ -69,3 +69,16 @@ os.arch() === какая 86 или 32
 2 даные которые я хочу передать
 
 // http создание веб сервера
+let server = http.createServer((req, res) => {
+  res.end("helll nodejs");
+});
+//req ответ юзера
+//res ответ сервера
+
+.end === завершение ответа из сервера
+.writeHead === "Content-Type": "text/html"
+
+server.listen(300 <anfn>)
+
+// патек nodemon провераяет код и перезаг сервер 
+
