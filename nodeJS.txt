@@ -102,7 +102,7 @@ app.listen(3000, () => {
 // это для того что бы webstorm понимал интерфейс express
 npm i -D @types/express
 
-// это для get запроса, мы отправляем send
+// это для get запроса, это возращяет определёный файл
 app.get("/", (req, res) => {
   res.send("<h1>exp</h1>");
 });
@@ -110,10 +110,18 @@ app.get("/", (req, res) => {
 // для автомата перезапуск сервера и странисы в браузере 
 npm i -D nodemon 
 
+res.sendFile(path.resolve(__dirname, "static", "index.html")); // передаёт файл (HTML), типа розметка но нужна библ path
 
+// но выдаёт ошибку для этого ...
+const __dirname = path.resolve();
 
+// для перехода на страницу мы меняем ...
+app.get("/features", ...
 
-
+// download для сказивания файла
+app.get("/download", (req, res) => {
+  res.download(path.resolve(__dirname, "static", "index.html"));
+});
 
 
 
