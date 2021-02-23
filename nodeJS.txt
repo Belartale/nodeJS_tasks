@@ -138,7 +138,21 @@ app.use(express.static(path.resolve(__dirname, "static")));
 
 библиотека ejs === шабланизатор???
 
+app.set("view engine", "ejs");
+console.log(app.get("view engine"));
+// также есть переменая views это папка в которой должно лежать
 
+// можно сменить папку на tam
+app.set("views", path.resolve(__dirname, "tam"));
 
+// сразу рендерим нужную страницу
+app.use("/", (req, res) => {
+  res.render("index");
+// app.get("/", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "static", "index.html"));
 
+// в render вторым параметром можно передать что-то {title: "main page"}
+// а у же в ejs <%= title %>
+
+// или pug #{ title }
 
