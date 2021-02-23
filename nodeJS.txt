@@ -1,3 +1,6 @@
+request == запрос 
+response == ответ
+
 // что бы експортировать нужно 
 // гдеЭкспорт.js
   const text1 = "TEXT1";
@@ -118,13 +121,22 @@ const __dirname = path.resolve();
 // для перехода на страницу мы меняем ...
 app.get("/features", ...
 
-// download для сказивания файла
+// download для скачивания файла
 app.get("/download", (req, res) => {
   res.download(path.resolve(__dirname, "static", "index.html"));
 });
 
+// middle wares (MW)
+app.use(express.static(path.resolve(__dirname, "static")));
+// и больше нам не надо на каждую страницу вешать .get запросы app.get("/features" ...
 
+// middle wares это експорт функции где есть request(запрос) response(ответ) и next == это говорит экспресу что идём дальше
 
+потом этот MW юзаем в .use
+
+// библиотека colors нужна для цветной консоли colors.bgBlue.black("text")
+
+библиотека ejs === шабланизатор???
 
 
 
