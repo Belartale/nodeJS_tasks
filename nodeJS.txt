@@ -166,6 +166,8 @@ app.use("/", (req, res) => {
 
 //движок для html === express-handlebars
 
+app.engine == движок для рендеринга страниц
+
 
 
 

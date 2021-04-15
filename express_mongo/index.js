@@ -1,33 +1,34 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const exphbs = require("express-handlebars");
+const todoRouters = require("./routes/todos");
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 const hbs = exphbs.create({
   defaultLayout: "main",
-  extname: "hbs",
+  extname: "hbs", // мы изм на короткое имя (на "hbs")
 });
 
-const nameHbs = "hbs";
-
-app.engine(nameHbs, hbs.engine);
-app.set("view engine", nameHbs);
+app.engine("hbs", hbs.engine); // регистрация движка по клю hbs
+app.set("view engine", "hbs");
 app.set("views", "views");
 
-async function start(params) {
+app.use(todoRouters); // регист даный роутер
+
+async function start() {
   try {
     await mongoose.connect(
-      "mongodb+srv://root:root@cluster0.eg7ix.mongodb.net/todos",
+      "mongodb+srv://admin1234:admin1234@cluster0.9pjes.mongodb.net/expmon",
       {
-        useNewUrlParser: false,
-        useFindAndModify: false,
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
       }
     );
 
-    app.listen(PORT, (params) => {
-      console.log("some text");
+    app.listen(PORT, () => {
+      console.log("SERVER STARTTTTTTTTTTTTTTTTTTTT");
     });
   } catch (error) {
     console.log(error);
