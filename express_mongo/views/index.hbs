@@ -1,1 +1,23 @@
-<h2>inasdasd</h2>
+<h2>index todo</h2>
+
+{{#if todos.length}}
+<ul>
+  {{#each todos}}
+  <li>
+    <label for="">
+      {{#if completed}}
+      <input checked type="checkbox" name="" id="">
+      <span>{{title}}</span>
+      {{#else}}
+      <input type="checkbox" name="" id="">
+      <span>{{title}}</span>
+      {{/if}}
+      <button class="btn btn-small">Save</button>
+    </label>
+  </li>
+  {{/each}}
+</ul>
+{{#else}}
+<p>No TODOS!!!!</p>
+
+{{/if}}
