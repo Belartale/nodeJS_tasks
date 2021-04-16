@@ -20,10 +20,10 @@ app.use(todoRouters); // регист даный роутер
 async function start() {
   try {
     await mongoose.connect(
-      "mongodb+srv://admin1234:admin1234@cluster0.9pjes.mongodb.net/expmon",
+      "mongodb+srv://admin1234:admin1234@cluster0.9pjes.mongodb.net/todos",
       {
         useNewUrlParser: true,
-        useUnifiedTopology: true,
+        useUnifiedTopology: false,
       }
     );
 
