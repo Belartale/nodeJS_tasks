@@ -1,15 +1,17 @@
-<h2>index todo</h2>
+<h2>Todos page</h2>
 
 {{#if todos.length}}
 <ul>
   {{#each todos}}
-  <li>
+  <li class="todo">
     <label for="">
       {{#if completed}}
-      <input checked type="checkbox" name="" id="">
-      <span>{{title}}</span>
-      {{#else}}
+      <input type="checkbox" checked>
+      <span>true</span>
+      <span class="completed">{{title}}</span>
+      {{else}}
       <input type="checkbox" name="" id="">
+      <span>false</span>
       <span>{{title}}</span>
       {{/if}}
       <button class="btn btn-small">Save</button>
@@ -17,7 +19,7 @@
   </li>
   {{/each}}
 </ul>
-{{#else}}
+{{else}}
 <p>No TODOS!!!!</p>
 
 {{/if}}

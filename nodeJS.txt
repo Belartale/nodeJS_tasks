@@ -168,9 +168,15 @@ app.use("/", (req, res) => {
 
 app.engine == движок для рендеринга страниц
 
+const { Router } = require("express");
+const router = Router();
 
-
-
+router.get("/create", (req, res) => {
+  res.render("create", {
+    title: "CREATE t",
+    isCreate: true,
+  });
+});
 
 
 

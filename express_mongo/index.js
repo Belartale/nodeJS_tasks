@@ -15,6 +15,8 @@ app.engine("hbs", hbs.engine); // регистрация движка по кл�
 app.set("view engine", "hbs");
 app.set("views", "views");
 
+app.use(express.urlencoded({ extended: true }));
+
 app.use(todoRouters); // регист даный роутер
 
 async function start() {
