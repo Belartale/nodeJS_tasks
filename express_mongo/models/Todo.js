@@ -4,7 +4,7 @@ const schema = new Schema({
     type: String,
     required: true,
   },
-  complete: {
+  completed: {
     type: Boolean,
     default: false,
   },
