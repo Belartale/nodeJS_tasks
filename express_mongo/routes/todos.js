@@ -5,11 +5,26 @@ const router = Router();
 router.get("/", async (req, res) => {
   const todos = await Todo.find({});
 
+  let arr = [];
+
+  let set = new Set();
+
+  await todos.forEach((object) => {
+    for (const key in object) {
+      if (key == "title") {
+        const element = object[key];
+        arr.push(element);
+      }
+    }
+  });
+
   await res.render("index", {
     title: "INDEX t",
     isIndex: true,
-    todos: todos,
+    todos: arr,
   });
+
+  await console.log(arr);
 });
 
 router.get("/create", (req, res) => {
