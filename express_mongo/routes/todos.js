@@ -40,4 +40,13 @@ router.post("/create", async (req, res) => {
   await res.redirect("/"); // посмотреть список всех todo
 });
 
+router.post("/complete", async (req, res) => {
+  const todo = await Todo.findById(req.body.id); // находит нужный todo (name="id")
+
+  todo.completed = !!req.body.completed;
+  await todo.save();
+
+  res.redirect("/"); // обновление страницы
+}); // созд роутер
+
 module.exports = router;

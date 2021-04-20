@@ -8,25 +8,27 @@
 
   {{#each todos}}
   <li class="todo">
-    <label>
-      {{#if completed}}
+    <form action="/complete" method="post">
+      <label>
+        {{#if completed}}
 
-      <input class="true" type="checkbox" checked>
-      <span>true</span>
-      <span class="completed">{{this.title}}</span>
-      {{else}}
-      <input class="false" type="checkbox">
-      <span>false</span>
-      <span>{{this.title}}</span>
-      {{/if}}
-      <button class="btn btn-small">Save</button>
-    </label>
+        <input class="true" type="checkbox" checked name="completed">
+        <span>true</span>
+        <span class="completed">{{this.title}}</span>
+        {{else}}
+        <input class="false" type="checkbox" name="completed">
+        <span>false</span>
+        <span>{{this.title}}</span>
+        {{/if}}
+
+        <input type="hidden" value={{_id}} name="id">
+
+        <button class="btn btn-small" type="submit">Save</button>
+      </label>
+    </form>
   </li>
   {{/each}}
 </ul>
 {{else}}
 <p>No TODOS!!!!</p>
 {{/if}}
-
-
-<span>{{todos}}</span>
