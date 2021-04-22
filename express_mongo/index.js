@@ -14,10 +14,10 @@ const hbs = exphbs.create({
 
 app.engine("hbs", hbs.engine); // регистрация движка по клю hbs
 app.set("view engine", "hbs");
-app.set("views", "views");
+app.set("views", "views"); // регистрация папки
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public"))); // подключаем css
 
 app.use(todoRouters); // регист даный роутер
 
